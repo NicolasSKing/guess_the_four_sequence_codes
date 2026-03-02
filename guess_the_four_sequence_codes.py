@@ -38,10 +38,27 @@ def check_code(guess, real_code):
             correct_pos += 1
             color_counts[guess_color] -= 1
     for guess_color, real_color in zip(guess, real_code):
-        if (guess_color in color_counts and color_counts[guess_color] > 0 and guess_color != real_color):
+        if guess_color in color_counts and color_counts[guess_color] > 0 and guess_color != real_color:
             incorrect_pos += 1
             color_counts[guess_color] -= 1
     return correct_pos, incorrect_pos
+
+root = tk.Tk()
+root.title("MASTERMIND")
+root.geometry("1000x600")
+root.resizable(False, False)
+
+background_image = Image.open("backgroun tkinter game.jpg")
+background_image = background_image.resize((1000, 600))
+background_image = ImageTk.PhotoImage(background_image)
+
+background_label = tk.Label(root, image=background_image)
+background_label.place(x=0, y=0, relwidth=1, relheight=1)
+
+code = generate_code()
+attempt = 0
+
+
 
 
 
