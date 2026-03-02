@@ -83,14 +83,14 @@ def submit_guess():
         return
     attempt += 1
     correct_pos, incorrect_pos = check_code(guess, code)
-    result_label.config(text=f"Correct Position: {correct_pos} | Wrong Positon: {incorrect_pos}")
+    result_label.config(text=f"Correct Position: {correct_pos} | Wrong Position: {incorrect_pos}")
     attempt_label.config(text=f"Attempts left: {tries - attempt}")
     entry.delete(0, tk.END)
     if correct_pos == code_length:
         messagebox.showinfo("Winner!", f"You guessed the code in {attempt} tries!.")
         root.destroy()
     elif attempt == tries:
-        messagebox.showinfo("Game Over", f"You ran out of tries1\nCode was: {' '.join(code)}")
+        messagebox.showinfo("Game Over", f"You ran out of tries!\nCode was: {' '.join(code)}")
         root.destroy()
 
 submit_button = tk.Button(root, text="Submit Guess", command=submit_guess, bg="#4CAF50", fg="white", font=("Comic Sans Ms", 14, "bold"), activebackground="#45a049", relief="raised", bd=5,)
