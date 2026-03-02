@@ -58,6 +58,27 @@ background_label.place(x=0, y=0, relwidth=1, relheight=1)
 code = generate_code()
 attempt = 0
 
+title_label = tk.Label(root, text="Mastermind", font=("Comic Sans Ms", 20, "bold"),fg="black",bg="purple")
+title_label.pack(pady=10)
+
+instruction_label = tk.Label(root,text="Enter 4 colors separated by space (example: RED BLUE GREEN YELLOW)",font=("Arial", 15, "bold"),fg="black",bg="purple")
+instruction_label.pack()
+
+colors_label = tk.Label(root, text="Valid colors: " + ",".join(color_choices),font=("Arial", 15, "bold"),fg="black",bg="purple")
+colors_label.pack(pady=5, padx=5)
+
+entry = tk.Entry(root, width=50,font=("Arial", 12, "bold"),fg="#000000",bg="#f0f0f0",bd=3,relief="sunken",)
+entry.pack(pady=10, padx=10)
+
+result_label = tk.label(root, text="", font=("Arial", 15, "bold"),fg="black",bg="green")
+result_label.pack(pady=10, padx=10)
+
+attempt_label = tk.Label(root, text=f"Attempts left: {tries}",font=("Arial", 15, "bold"),fg="black",bg="green")
+attempt_label.pack()
+
+
+
+
 
 
 
